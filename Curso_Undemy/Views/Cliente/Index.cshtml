@@ -1,0 +1,41 @@
+﻿@using Curso_Undemy.Models;
+@model List<ClienteCLS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <td width="25%">
+                @Html.LabelFor(p => Model[0].iidcliente)
+            </td>
+            <td width="25%">
+                @Html.LabelFor(p => Model[0].nombre)
+            </td>
+            <td width="25%">
+                @Html.LabelFor(p => Model[0].direccion)
+            </td>
+            <td width="25%">
+                @Html.LabelFor(p => Model[0].telefonocelular)
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+
+        llamando data de la lista
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.iidcliente</td>
+            <td>@item.nombre</td>
+            <td>@item.direccion</td>
+            <td>@item.telefonocelular</td>
+        </tr>
+        }
+    </tbody>
+
+</table>
